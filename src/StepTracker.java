@@ -22,7 +22,7 @@ public class StepTracker {
 
         if (month < 1 || month > 12) {
             System.out.println("Месяц должен быть в диапазоне 1-12");
-            returnToMenu();
+            printError();
             return;
         }
 
@@ -32,7 +32,7 @@ public class StepTracker {
 
         if (day < 1 || day > 30) {
             System.out.println("День должен быть в диапазоне 1-30");
-            returnToMenu();
+            printError();
             return;
         }
 
@@ -42,7 +42,7 @@ public class StepTracker {
 
         if (steps < 0) {
             System.out.println("Количество шагов должно быть положительным");
-            returnToMenu();
+            printError();
             return;
         }
 
@@ -64,8 +64,7 @@ public class StepTracker {
 
         if (newGoal <= 0) {
             System.out.println("Количество шагов должно быть положительным");
-            returnToMenu();
-            return;
+            printError();
         } else {
             goalByStepsPerDay = newGoal;
             System.out.println("Новое значение сохранено!");
@@ -114,14 +113,13 @@ public class StepTracker {
             separator();
         } else {
             System.out.println("Месяц должен быть в диапазоне 1-12");
-            returnToMenu();
-            return;
+            printError();
         }
     }
 
 
     // уведомление об ошибочных данных
-    void returnToMenu() {
+    void printError() {
         System.out.println("Перепроверь данные и попробуй ещё раз");
         separator();
     }
